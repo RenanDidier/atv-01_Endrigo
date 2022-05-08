@@ -79,7 +79,7 @@ internal class UsuarioValidatorTest {
         assertThrows<UsuarioInvalidoException> {
             usuarioValidator.valida(usuario.copy(senha ="123"))
         }.also {
-            Assertions.assertEquals("O campo confirmação senha deve ter mais de 8 caracteres", it.message)
+            Assertions.assertEquals("O campo confirmação senha deve ter entre 8 e 15 caracteres", it.message)
         }
     }
 
@@ -89,7 +89,7 @@ internal class UsuarioValidatorTest {
         assertThrows<UsuarioInvalidoException> {
             usuarioValidator.valida(usuario.copy(senha ="1234567891234567"))
         }.also {
-            Assertions.assertEquals("O campo confirmação senha deve ser menor do que 15 caracteres", it.message)
+            Assertions.assertEquals("O campo confirmação senha deve ter entre 8 e 15 caracteres", it.message)
         }
     }
 

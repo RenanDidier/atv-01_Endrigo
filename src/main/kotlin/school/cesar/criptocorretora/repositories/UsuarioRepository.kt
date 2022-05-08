@@ -1,6 +1,7 @@
 package school.cesar.criptocorretora.repositories
 
 import school.cesar.criptocorretora.entidades.Usuario
+import school.cesar.criptocorretora.excecoes.UsuarioInvalidoException
 
 class UsuarioRepository {
 
@@ -11,5 +12,5 @@ class UsuarioRepository {
     }
 
     fun buscarPorId(id: Long) =
-        usuarios.firstOrNull { it.id == id }
+        usuarios.firstOrNull { it.id == id } ?: throw UsuarioInvalidoException("Usuario nao encontrado")
 }
