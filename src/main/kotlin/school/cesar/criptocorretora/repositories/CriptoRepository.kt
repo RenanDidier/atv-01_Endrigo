@@ -1,6 +1,7 @@
 package school.cesar.criptocorretora.repositories
 
 import school.cesar.criptocorretora.entidades.Cripto
+import school.cesar.criptocorretora.excecoes.CriptoInvalidaException
 
 class CriptoRepository {
 
@@ -15,8 +16,8 @@ class CriptoRepository {
     }
 
     fun buscarPeloId(id: Long) =
-        criptos.firstOrNull { it.id == id }
+        criptos.firstOrNull { it.id == id } ?: throw CriptoInvalidaException("Id não existente")
 
     fun buscarPeloNome(nome: String) =
-        criptos.firstOrNull { it.nome == nome }
+        criptos.firstOrNull { it.nome == nome } ?: throw CriptoInvalidaException("Nome não existente")
 }
