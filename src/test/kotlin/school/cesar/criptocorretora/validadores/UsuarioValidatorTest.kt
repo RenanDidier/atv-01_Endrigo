@@ -4,6 +4,7 @@ import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.Assertions
 import org.junit.jupiter.api.assertDoesNotThrow
 import org.junit.jupiter.api.assertThrows
+import school.cesar.criptocorretora.entidades.Carteira
 import school.cesar.criptocorretora.entidades.Cripto
 import school.cesar.criptocorretora.entidades.Usuario
 import school.cesar.criptocorretora.excecoes.CriptoInvalidaException
@@ -16,7 +17,7 @@ import school.cesar.criptocorretora.util.SenhaUtil
 internal class UsuarioValidatorTest {
 
     private val usuarioValidator = UsuarioValidator(CPFUtil(), EmailUtil(), SenhaUtil())
-    private val usuario = Usuario(123456789, "30331412004", "Renan Didier", "renanDidier@qa.com", "ABcd12345", ArrayList())
+    private val usuario = Usuario(123456789, "30331412004", "Renan Didier", "renanDidier@qa.com", "ABcd12345", Carteira())
 
     @Test
     fun `O campo deve ser preenchido`() {
