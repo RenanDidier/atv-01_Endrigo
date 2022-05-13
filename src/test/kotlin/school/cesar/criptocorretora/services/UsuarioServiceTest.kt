@@ -23,7 +23,12 @@ internal class UsuarioServiceTest {
     //private val usuarioMock = mokk<Usuario(123456789, "30331412004", "Renan Didier", "renanDidier@qa.com", "ABcd12345", ArrayList())>
     private val usuario = Usuario(123456789, "30331412004", "Renan Didier", "renanDidier@qa.com", "ABcd12345", Carteira())
 
-
+    @Test
+    fun `Deve adicionar usuario`() {
+        assertDoesNotThrow {
+            usuarioService.adicionar(usuario)
+        }
+    }
 
     @Test
     fun `Usuario deve ser encontrado pelo ID`() {

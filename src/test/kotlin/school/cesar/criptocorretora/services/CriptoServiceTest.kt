@@ -15,6 +15,12 @@ internal class CriptoServiceTest {
     private val criptoService = CriptoService(CriptoBuilder(), CriptoValidador(), CriptoRepository())
 
     @Test
+    fun `Deve adicionar nova Cripto`() {
+        org.junit.jupiter.api.assertDoesNotThrow {
+            criptoService.add("criptoMoeda", BigDecimal(4))
+        }
+    }
+    @Test
     fun `Cripto deve ser encontrada pelo ID`() {
         org.junit.jupiter.api.assertDoesNotThrow {
             criptoService.add("criptoMoeda", BigDecimal(4))
